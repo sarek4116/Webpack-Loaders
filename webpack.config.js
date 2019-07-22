@@ -1,11 +1,16 @@
 const path = require('path');
 
-module.exports = {
-    entry: './src/index.js',
+module.exports = (env) => {
+const environment = env || 'development' || 'production'
+
+    return {
+        mode: environment,
+        entry: './src/index.js',
         output: {
         path: path.resolve(__dirname, 'build'),
-        filename: 'app.bundle.js'
-    },
+        filename: 'app.' + environment + '.bundle.js'
+    }
+,
     module: {
         rules: [
             {
@@ -26,4 +31,5 @@ module.exports = {
             }
         ]
     }
+}
 };
