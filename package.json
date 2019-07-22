@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack --env development",
+    "start": "webpack-dev-server --hot --env development",
     "build": "webpack --env production",
     "init:gitignore": "curl https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore -o .gitignore"
   },
@@ -28,9 +28,11 @@
     "optimize-js-plugin": "0.0.4",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-hot-loader": "^4.12.8",
     "style-loader": "^0.23.1",
     "webpack": "^4.36.1",
-    "webpack-cli": "^3.3.6"
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.7.2"
   },
   "dependencies": {
     "uuid": "^3.3.2"

@@ -1,5 +1,6 @@
 import React from 'react';
 import uuid from 'uuid';
+import { hot } from 'react-hot-loader';
 import style from './App.css';
 import Title from '../components/Title';
 import TodoList from '../components/TodoList';
@@ -39,11 +40,11 @@ class App extends React.Component {
     render() {
         return (
             <div className={style.TodoApp}>
-                <Title title={'Todo App'} todoList={todoList.length}/>
+                <Title title={'Todo App'} todoList={this.state.data.length}/>
                 <TodoList data={this.state.data} remove={this.removeTodo}/>
             </div>
         );
     }
 }
 
-export default App;
+export default hot(module)(App);
